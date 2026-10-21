@@ -43,7 +43,7 @@ export const homePage: PageContent = {
         title: "Legion Was Here walkthrough",
         href: "/guides/walkthrough",
         description:
-          "The campaign overview: the six contracted missions, the credibility score, and what a failed run costs you.",
+          "All six contracted missions with the target you impersonate, who questions you, and the dossier and interview answers each one decides.",
       },
       supporting: [
         {
@@ -56,7 +56,7 @@ export const homePage: PageContent = {
           title: "Black screen and purple language screen",
           href: "/guides/black-screen-fix",
           description:
-            "The launch checklist, from forcing the right GPU to the frozen first screen.",
+            "The game renders through WebView2, so the usual high-performance GPU setting does nothing. The registry override that does work, plus the Linux steps.",
         },
       ],
     },
@@ -107,19 +107,19 @@ export const homePage: PageContent = {
               label: "Dossier guide",
               href: "/guides/dossier-guide",
               description:
-                "What is in a mission file, how to sort appearance clues from biographical ones, and how to tell a real clue from a planted one.",
+                "Every document in the game is double sided. These are the backs that carry the answers, mission by mission.",
             },
             {
               label: "Face creation",
               href: "/guides/face-creation",
               description:
-                "The order to set features in, and which evidence each slider should be based on.",
+                "The ten numbered traits in the editor, plus the exact recipe for all six targets.",
             },
             {
               label: "Interview questions",
               href: "/guides/interview-questions",
               description:
-                "What gets asked, how to prioritise your hand notes, and how to reach 100 percent credibility.",
+                "The answers, which questions always play, and the pairs that swap phrasings between replays.",
             },
           ],
         },
@@ -130,18 +130,19 @@ export const homePage: PageContent = {
               label: "The Big Day mission",
               href: "/guides/big-day-mission",
               description:
-                "The one contract with two achievements of its own, including the 100 percent one.",
+                "You are Ralf, Helga is questioning you and Alex walks in dressed as Roomzy. The eleven mascot names and every answer.",
             },
             {
               label: "The final mission",
               href: "/guides/final-mission",
-              description: "How the campaign ends and what actually counts as finishing the game.",
+              description:
+                "How the campaign ends, and the two-poem clue chain behind Legion: Origins.",
             },
             {
               label: "Hidden achievements",
               href: "/guides/titlescreen-achievement",
               description:
-                "The two rarest unlocks in the game, which have nothing to do with playing a contract.",
+                "The two rarest unlocks in the game: the cone-eared face you rebuild in the editor, and one that is a confirmed bug.",
             },
           ],
         },
@@ -152,7 +153,7 @@ export const homePage: PageContent = {
               label: "Black screen and purple language screen",
               href: "/guides/black-screen-fix",
               description:
-                "The launch checklist, from forcing the right GPU to the frozen first screen.",
+                "The game renders through WebView2, so the usual high-performance GPU setting does nothing. The registry override that does work, plus the Linux steps.",
             },
             {
               label: "Flashing lights",
@@ -174,5 +175,5 @@ export const homePage: PageContent = {
   relatedPageIds: [],
   schemaTypes: ["WebSite", "CollectionPage"],
   sourceStatus: "internal",
-  lastReviewed: "2026-10-21",
+  lastReviewed: "2026-10-22",
 };
