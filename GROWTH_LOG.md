@@ -1,0 +1,29 @@
+# GROWTH_LOG.md
+
+## How To Use This File
+
+Record every growth-relevant edit here. Keep entries short, factual, and useful for future agents.
+
+A growth-relevant edit is not complete until this file is updated. Entries below cover
+`legionwashere.pro` only; they do not carry over the shared template's history.
+
+## Change Log
+
+### 2026-10-21 - Launch integration: production config and site handoff files
+
+- Set the site to its production identity for `legionwashere.pro`: `NEXT_PUBLIC_SITE_URL` in `src/data/site.ts` and `.env.example`, and the `vars` block in `wrangler.jsonc` (`NEXT_PUBLIC_SITE_URL`, plus the `NEXT_PUBLIC_GA_MEASUREMENT_ID` and `NEXT_PUBLIC_BING_SITE_AUTH_CODE` keys left empty for this step). `next.config.ts` keeps `output: "export"`; `wrangler.jsonc` serves `./out` with `not_found_handling: "404-page"` and `drop-trailing-slash`, and has no `main` Worker script.
+- Regenerated the three handoff files against the routes this site actually publishes. `CONTENT_INDEX.md` now lists the 16 real routes with their keywords, intent, CTAs, internal-link roles, the per-section `next_steps` map and the ad-slot index; the previous copy still described the template's `/wiki`, `/guides`, `/release-date` and `/faq` pages, none of which exist here. `AGENTS.md` referred to this site as `example.com` in two places and now names `legionwashere.pro`. This log's earlier template history was dropped so the file records only this site.
+- Confirmed the fixed AdSense ownership trio survived assembly: the `google.com, pub-4194035852162505, DIRECT, f08c47fec0942fa0` record in `public/ads.txt`, the `google-adsense-account` meta tag `ca-pub-4194035852162505` in `src/app/layout.tsx`, and the `pagead2.googlesyndication.com` loader for the same client. These are publisher identifiers and were not changed.
+- Added the IndexNow key file `public/indexnow-af8a4f40aa00c5b2ccae1d01c00dccbb.txt` (`npm run indexnow:setup`), used only by `indexnow:submit` to announce changed URLs to participating search engines.
+- The shared-pool binding for this site is written by the launch deployer, not by hand: it adds `.shared-worker.json` and `.github/workflows/shared-worker.yml` pointing at the reserved pool. The pool deploy hook is a credential held as a GitHub secret (`SHARED_WORKER_DEPLOY_HOOK`) and is never written into site source.
+- Validation: `npm run verify` (typecheck, lint, build) clean; `npm run routes:manifest` reports 16 routes with no trailing slash except `/`; every route's title, description, H1 and canonical point at `https://legionwashere.pro`; all 17 keys in `src/data/ads.ts` are still empty.
+
+### 2026-10-21 - Legion Was Here guide site assembled from the guide-v4 drafts
+
+- Built the 16 published routes from the 11 approved guide drafts plus the site index and four trust pages: `/`, `/guides/walkthrough`, `/guides/demo-walkthrough`, `/guides/dossier-guide`, `/guides/face-creation`, `/guides/interview-questions`, `/guides/big-day-mission`, `/guides/final-mission`, `/guides/titlescreen-achievement`, `/guides/black-screen-fix`, `/guides/flashing-lights`, `/guides/save-slot`, `/about`, `/contact`, `/privacy`, `/terms`.
+- Removed the template routes that no draft supported: `/wiki`, the `/guides` aggregate, `/release-date` and `/faq`. No FAQ was invented, so `src/data/faq.ts`, `src/data/entities.ts`, `wiki-pages.ts` and `release-pages.ts` are gone and no FAQ schema is emitted. Directory duties pass to the homepage `guide-index` module and the persistent sidebar.
+- Named the privacy page `/privacy` and fixed the footer link that still pointed at the template's `/privacy-policy`; the exported site has zero dead internal `href`s.
+- Restricted guide ad slots to `pageType === "guides"` after the shared `ContentPage` had also emitted them on the four trust pages, and restricted `page-top` to the homepage so a guide's answer is never placed behind an ad.
+- Set the visual identity from the actual game screenshots rather than a template preset: magenta `#F04090` and plum `#501070` on warm paper, geometric heading stack, `radius: 10px`, low-contrast dot motif. Added a local `clamp(32px, 3.4vw, 50px)` H1 override because the shared `visual-cover` rule compressed the homepage H1 to six lines; the headline text itself is unchanged.
+- Registered the four Collector images with real dimensions, alt text and per-page usage. No official game logo is used.
+- Validation: `npm run verify` clean with no errors or warnings; 16 routes in `route-manifest.json`; every page's `seoTitle`, `metaDescription` and `h1` copied verbatim from the draft frontmatter and `# H1` with 0 deviations; 25 `next_steps` links all land inside their named H2's body; no template placeholder text in any exported HTML.

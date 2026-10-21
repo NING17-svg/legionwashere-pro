@@ -1,0 +1,162 @@
+[
+  {
+    "id": "home",
+    "translationKey": "home",
+    "locale": "en-US",
+    "routeKind": "home",
+    "url": "/",
+    "alternates": {
+      "en-US": "/"
+    }
+  },
+  {
+    "id": "about",
+    "translationKey": "about",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/about",
+    "alternates": {
+      "en-US": "/about"
+    }
+  },
+  {
+    "id": "contact",
+    "translationKey": "contact",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/contact",
+    "alternates": {
+      "en-US": "/contact"
+    }
+  },
+  {
+    "id": "big-day-mission",
+    "translationKey": "big-day-mission",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/big-day-mission",
+    "alternates": {
+      "en-US": "/guides/big-day-mission"
+    }
+  },
+  {
+    "id": "black-screen-fix",
+    "translationKey": "black-screen-fix",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/black-screen-fix",
+    "alternates": {
+      "en-US": "/guides/black-screen-fix"
+    }
+  },
+  {
+    "id": "demo-walkthrough",
+    "translationKey": "demo-walkthrough",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/demo-walkthrough",
+    "alternates": {
+      "en-US": "/guides/demo-walkthrough"
+    }
+  },
+  {
+    "id": "dossier-guide",
+    "translationKey": "dossier-guide",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/dossier-guide",
+    "alternates": {
+      "en-US": "/guides/dossier-guide"
+    }
+  },
+  {
+    "id": "face-creation",
+    "translationKey": "face-creation",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/face-creation",
+    "alternates": {
+      "en-US": "/guides/face-creation"
+    }
+  },
+  {
+    "id": "final-mission",
+    "translationKey": "final-mission",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/final-mission",
+    "alternates": {
+      "en-US": "/guides/final-mission"
+    }
+  },
+  {
+    "id": "flashing-lights",
+    "translationKey": "flashing-lights",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/flashing-lights",
+    "alternates": {
+      "en-US": "/guides/flashing-lights"
+    }
+  },
+  {
+    "id": "interview-questions",
+    "translationKey": "interview-questions",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/interview-questions",
+    "alternates": {
+      "en-US": "/guides/interview-questions"
+    }
+  },
+  {
+    "id": "save-slot",
+    "translationKey": "save-slot",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/save-slot",
+    "alternates": {
+      "en-US": "/guides/save-slot"
+    }
+  },
+  {
+    "id": "titlescreen-achievement",
+    "translationKey": "titlescreen-achievement",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/titlescreen-achievement",
+    "alternates": {
+      "en-US": "/guides/titlescreen-achievement"
+    }
+  },
+  {
+    "id": "walkthrough",
+    "translationKey": "walkthrough",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/walkthrough",
+    "alternates": {
+      "en-US": "/guides/walkthrough"
+    }
+  },
+  {
+    "id": "privacy",
+    "translationKey": "privacy",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/privacy",
+    "alternates": {
+      "en-US": "/privacy"
+    }
+  },
+  {
+    "id": "terms",
+    "translationKey": "terms",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/terms",
+    "alternates": {
+      "en-US": "/terms"
+    }
+  }
+]
