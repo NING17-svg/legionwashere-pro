@@ -9,6 +9,14 @@ A growth-relevant edit is not complete until this file is updated. Entries below
 
 ## Change Log
 
+### 2026-10-21 - Adsterra ad codes filled into the approved placement inventory
+
+- Replaced the empty placeholder values in `src/data/ads.ts` with the real Adsterra codes for all 17 units in this site's `ad-placement-manifest.json`. Every key of the manifest inventory is present exactly once and non-empty; no key outside the inventory was added and no switch field was introduced.
+- The inventory selects 8 distinct platform formats/sizes, and the same-format page keys deliberately share one platform placement and one code: `728x90` (`page-top-728x90`, `home-topic-break-728x90`, `guide-section-break-728x90`), `468x60` (`page-top-468x60`, `home-topic-break-468x60`, `home-directory-end-468x60`, `guide-section-break-468x60`, `guide-before-faq-468x60`), `320x50` (`page-top-320x50`, `home-directory-end-320x50`, `guide-section-break-320x50`, `guide-before-faq-320x50`), plus `300x250`, `160x600`, `160x300`, `Native Banner` and the footer `Smartlink` URL. Different sizes never share a code.
+- Only formats selected by the page inventory were requested and collected. Popunder and Social Bar are not in this inventory and were neither requested nor written into the site.
+- No ad component, slot position, page structure, content or SEO was changed; the layout remains exactly what Page Builder produced. The target layout is read-only for this step.
+- Validation: `npm run verify` (typecheck, lint, build) clean. This records that the codes were written, validated locally and pushed; it does not claim any Cloudflare build result or any live ad request or impression.
+
 ### 2026-10-21 - Analytics and search verification wired into the production build
 
 - Created this site's own GA4 property (`properties/559935107`, display name `legionwashere.pro`, timezone `Asia/Shanghai`) and its web data stream (`properties/559935107/dataStreams/16170957808`), measurement ID `G-FHNP8KNWR1`. These belong to `legionwashere.pro` only and are not reused from another site.
