@@ -9,6 +9,14 @@ A growth-relevant edit is not complete until this file is updated. Entries below
 
 ## Change Log
 
+### 2026-10-21 - Analytics and search verification wired into the production build
+
+- Created this site's own GA4 property (`properties/559935107`, display name `legionwashere.pro`, timezone `Asia/Shanghai`) and its web data stream (`properties/559935107/dataStreams/16170957808`), measurement ID `G-FHNP8KNWR1`. These belong to `legionwashere.pro` only and are not reused from another site.
+- Wrote the measurement ID into `NEXT_PUBLIC_GA_MEASUREMENT_ID` in `wrangler.jsonc`, so the tag is baked in when the shared pool builds this site.
+- Generated this site's Bing `msvalidate.01` code and wrote it into `NEXT_PUBLIC_BING_SITE_AUTH_CODE` in `wrangler.jsonc`. It was set on the site repo only and deliberately not on the shared pool's build variables, so no other pool member inherits it.
+- Both are `NEXT_PUBLIC_*` values inlined at build time, so they must ship in the same site commit to take effect together in one shared-pool rebuild.
+- Validation: GA4 admin API preflight returned the account; the connector reported the new property and stream. Public verification of the tag, the marker `source_commit` and the Bing meta tag is recorded in the launch result, not claimed here.
+
 ### 2026-10-21 - Launch integration: production config and site handoff files
 
 - Set the site to its production identity for `legionwashere.pro`: `NEXT_PUBLIC_SITE_URL` in `src/data/site.ts` and `.env.example`, and the `vars` block in `wrangler.jsonc` (`NEXT_PUBLIC_SITE_URL`, plus the `NEXT_PUBLIC_GA_MEASUREMENT_ID` and `NEXT_PUBLIC_BING_SITE_AUTH_CODE` keys left empty for this step). `next.config.ts` keeps `output: "export"`; `wrangler.jsonc` serves `./out` with `not_found_handling: "404-page"` and `drop-trailing-slash`, and has no `main` Worker script.
